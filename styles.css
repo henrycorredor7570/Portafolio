@@ -122,8 +122,9 @@ html {
 /* SECCION S O B R E  M I */
 
 #sobremi {
-    /* background-color: #241512; */
-    max-width: 1100px;
+    background-color: #dfdbdb;
+    /* max-width: 1100px; */
+    max-width: 100%;
     margin: auto;
     padding: 100px 15px;
     color: #111135;
@@ -131,7 +132,8 @@ html {
 }
 #sobremi .contenedor-foto {
     max-width: 500px;
-    margin-right: 80px;
+    /* margin-right: 80px; */
+    margin: 0 80px 0 130px;
 }
 #sobremi .contenedor-foto img {
     width: auto; 
@@ -141,7 +143,8 @@ html {
     padding: 20px;
 }
 #sobremi .sobremi {
-    margin: 0 40px;
+    /* margin: 0 40px; */
+    margin: 0 130px 0 40px;
 }
 #sobremi .sobremi .titulo-seccion {
     font-size: 22px;
@@ -193,7 +196,7 @@ html {
     padding: 100px 15px;
     text-align: center;
     background-color: #f3f3f3;
-    background: linear-gradient(#eb5a5acc, rgba(33,16,16,.8)), url("assets/1218911.jpg");
+    background: linear-gradient(#eb5a5acc, rgba(33,16,16,.8)), url("assets/MERN.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -391,12 +394,34 @@ html {
     }
 }
 
-/* SECCION PORTFOLIO */
+/* SECCION PORTAFOLIO */
 #portfolio {
-    max-width: 1100px;
+    /* max-width: 1100px;
     padding: 100px 0;
-    margin: auto;
+    margin: auto; */
+    padding: 100px 15px;
+    text-align: center;
+    background-color: #f3f3f3;
+    background: linear-gradient(#eb5a5acc, rgba(33,16,16,.8)), url("assets/1218911.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 100px 0;
+    text-align: center;
 }
+/* #servicios {
+    padding: 100px 15px;
+    text-align: center;
+    background-color: #f3f3f3;
+    background: linear-gradient(#eb5a5acc, rgba(33,16,16,.8)), url("assets/1218911.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 100px 0;
+    text-align: center;
+} */
 #portfolio .titulo-seccion {
     text-align: center;
     font-size: 22px;

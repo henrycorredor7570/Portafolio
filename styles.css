@@ -37,8 +37,8 @@ html {
     color: #ff5080;
 }
 #inicio .contenido header .contenido-header .logo {
-    max-height: 60px;
-    width: auto;
+    max-width: 55px;
+    height: auto;
 }
 #inicio .contenido header .contenido-header nav ul {
     list-style: none;
@@ -96,6 +96,9 @@ html {
 #inicio .contenido .presentacion .legend {
     font-size: 20px;
     font-family: italic;
+    text-align: center;
+    margin: 12px;
+
 }
 #inicio .contenido .presentacion .legend span {
     color: #ff5080; 
@@ -191,12 +194,8 @@ html {
     margin: 40px;
 }
 #sobremi .sobremi .datos_contacto p a img {
-    width: 40px;
     max-width: 50px;
     height: auto;
-}
-#sobremi .sobremi .datos_contacto p a img:hover {
-    width: 41px;
 }
 #sobremi .sobremi .download_cv {
     display: inline-block;  
@@ -592,16 +591,21 @@ footer a{
     #sobremi {
         padding: 50px 0;
         display: block;
+        text-align: center;
     }
     #sobremi .contenedor-foto {
         margin: auto;
     }
     #sobremi .contenedor-foto img {
-        max-width: 100%;
+        max-width: 80%;
         height: auto;
         border-radius: 20px;
         background-color: #f3f3f3;
         padding: 8px;
+        margin-bottom: 20px;
+    }
+    #sobremi .sobremi {
+        margin: 0 12px;
     }
     #sobremi .sobremi .titulo-seccion {
         text-align: center;
@@ -643,6 +647,10 @@ footer a{
         margin-bottom: 15px;
     }
     #sobremi .sobremi .datos_contacto p a img {
-        width: 15px;
+        width: 15vw;
+    }
+    
+    #inicio .contenido header .contenido-header .logo {
+        width: 15vw;
     }
 }

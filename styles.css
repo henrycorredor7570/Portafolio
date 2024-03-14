@@ -12,7 +12,6 @@ html {
 }
 #inicio{
     background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("assets/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg"); 
-    /* background-color: #300101; */
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -103,12 +102,6 @@ html {
 #inicio .contenido .presentacion .legend span {
     color: #ff5080; 
 }
-#inicio .contenido .presentacion .descripcion {
-    max-width: 700px;
-    margin: 25px auto;
-    font-size: 18px;
-    text-align: center;
-}
 #inicio .contenido .presentacion a {
     text-decoration: none;
     display: inline-block;
@@ -132,8 +125,6 @@ html {
 /* SECCION S O B R E  M I */
 
 #sobremi {
-    /* background-color: #f0efef; */
-    /* max-width: 1100px; */
     max-width: 100%;
     margin: auto;
     padding: 100px 15px;
@@ -153,12 +144,13 @@ html {
     padding: 20px;
 }
 #sobremi .sobremi {
-    /* margin: 0 40px; */
     margin: 0 130px 0 40px;
+    min-width: 150px;
 }
 #sobremi .sobremi .titulo-seccion {
     font-size: 22px;
     text-transform: uppercase;
+    font-weight: bold;
     color: #111135;
     text-decoration: underline;
     text-decoration-color: #d3d3d3;
@@ -188,14 +180,28 @@ html {
 }
 #sobremi .sobremi .datos_contacto {
     text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0; 
 }
-#sobremi .sobremi .datos_contacto p {
-    display: inline-block;
-    margin: 40px;
-}
-#sobremi .sobremi .datos_contacto p a img {
-    max-width: 50px;
+#sobremi .sobremi .datos_contacto .whatsapp img {
+    width: 4vw;
     height: auto;
+    padding: 10px; 
+}
+#sobremi .sobremi .datos_contacto .linkedIn img {
+    width: 4vw;
+    height: auto; 
+    padding: 10px; 
+}
+#sobremi .sobremi .datos_contacto .gmail img {
+    width: 4vw;
+    height: auto;
+    padding: 10px; 
+}
+#sobremi .sobremi .cv {
+    display: flex;
+    justify-content: center;
 }
 #sobremi .sobremi .download_cv {
     display: inline-block;  
@@ -216,21 +222,18 @@ html {
 #servicios {
     padding: 100px 15px;
     text-align: center;
-    background-color: #f3f3f3;
     background: linear-gradient(#eb5a5acc, rgba(33,16,16,.8)), url("assets/MERN.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    padding: 100px 0;
-    text-align: center;
 }
 #servicios .titulo-seccion {
     font-size: 22px;
     text-transform: uppercase;
-    color: #111135;
+    color: #fff;
     text-decoration: underline;
-    text-decoration-color: #d3d3d3;
+    text-decoration-color: #a5a4a4;
     text-decoration-thickness: 5px;
 }
 #servicios .fila {
@@ -243,8 +246,8 @@ html {
     max-width: 350px;
     background-color: #fff;
     padding: 30px;
-    margin: 0 5px;
-    border-radius: 5px;
+    margin: 0 10px;
+    border-radius: 8px;
     transition: .5s;
 }
 #servicios .fila .servicio:hover {
@@ -282,11 +285,6 @@ html {
 
 /* SECCION HABILIDADES */
 .contenedor-skills {
-    /* background: linear-gradient(#eb5a5acc, rgba(33,16,16,.8)), url("assets/1218911.jpg"); */
-    /* background-attachment: fixed; */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    /* background-position: center center; */
     padding: 100px 0;
     text-align: center;
     background-color: #f3f3f3;
@@ -417,9 +415,6 @@ html {
 
 /* SECCION PORTAFOLIO */
 #portfolio {
-    /* max-width: 1100px;
-    padding: 100px 0;
-    margin: auto; */
     padding: 100px 15px;
     text-align: center;
     background-color: #f3f3f3;
@@ -431,18 +426,6 @@ html {
     padding: 100px 0;
     text-align: center;
 }
-/* #servicios {
-    padding: 100px 15px;
-    text-align: center;
-    background-color: #f3f3f3;
-    background: linear-gradient(#eb5a5acc, rgba(33,16,16,.8)), url("assets/1218911.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    padding: 100px 0;
-    text-align: center;
-} */
 #portfolio .titulo-seccion {
     text-align: center;
     font-size: 22px;
@@ -588,6 +571,9 @@ footer a{
     #inicio .contenido .presentacion h2 {
         font-size: 40px;
     }
+    #inicio .contenido header .contenido-header .logo {
+        width: 15vw;
+    }
     #sobremi {
         padding: 50px 0;
         display: block;
@@ -613,6 +599,11 @@ footer a{
     #sobremi .sobremi h2 {
         font-size: 25px;
         text-align: center;
+    }
+    #sobremi .sobremi .datos_contacto .whatsapp a img,
+    #sobremi .sobremi .datos_contacto .linkedIn img,
+    #sobremi .sobremi .datos_contacto .gmail img {
+        width: 20vw;
     }
     #servicios {
         padding: 50px 15px;
@@ -645,12 +636,5 @@ footer a{
     #contacto .contenedor-form .mitad input {
         width: 100%;
         margin-bottom: 15px;
-    }
-    #sobremi .sobremi .datos_contacto p a img {
-        width: 15vw;
-    }
-    
-    #inicio .contenido header .contenido-header .logo {
-        width: 15vw;
     }
 }

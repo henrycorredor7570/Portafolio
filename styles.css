@@ -145,7 +145,7 @@ html {
 }
 #sobremi .sobremi {
     margin: 0 130px 0 40px;
-    min-width: 150px;
+    min-width: 300px;
 }
 #sobremi .sobremi .titulo-seccion {
     font-size: 22px;
@@ -256,6 +256,7 @@ html {
 #servicios .fila .servicio h4 {
     font-size: 22px;
     margin-bottom: 25px;
+    color: #ff5080;
 }
 #servicios .fila .servicio .icono {
     display: inline-block;
@@ -267,7 +268,7 @@ html {
     margin-bottom: 25px;
 }
 #servicios .fila .servicio hr {
-    width: 30%;
+    width: 40%;
     margin: auto;
     color: #000;
     margin-bottom: 25px;
@@ -275,12 +276,24 @@ html {
 #servicios .fila .servicio ul {
     list-style: none;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    justify-content: space-evenly;
+    margin: 0 -10px 10px -10px;
+}
+#servicios .fila .servicio ul li {
+    background-color: #514b4b;
+    border: solid 1px #000000;
+    color: white;
+    font-weight: 600;
+    padding: 10px 5px;
+    border-radius: 5px;
+    width: 5vw;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #706e6e;
 }
 #servicios .fila .servicio p {
     font-size: 14px;
     line-height: 22px;
+    font-weight: 600;
 }
 
 /* SECCION HABILIDADES */
@@ -610,9 +623,13 @@ footer a{
     }
     #servicios .fila {
         display: block;
+        margin: 20px auto;
     }
     #servicios .fila .servicio {
-        margin: 10px auto;
+        margin: 20px auto;
+    }
+    #servicios .fila .servicio ul {
+        display: ruby-text;
     }
     .contenedor-skills {
         padding: 50px 20px;

@@ -284,9 +284,8 @@ html {
     border: solid 1px #000000;
     color: white;
     font-weight: 600;
-    padding: 10px 5px;
+    padding: 10px 10px;
     border-radius: 5px;
-    width: 5vw;
     cursor: pointer;
     box-shadow: 2px 2px 2px #706e6e;
 }
@@ -298,132 +297,58 @@ html {
 
 /* SECCION HABILIDADES */
 .contenedor-skills {
-    padding: 100px 0;
+    padding: 100px 15px;
     text-align: center;
-    background-color: #f3f3f3;
 }
-.contenedor-skills .skill {
-    max-width: 600px;
-    margin: 30px auto;
+.contenedor-skills h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #a5a4a4;
+    text-decoration-thickness: 5px;
 }
-.contenedor-skills .skill .info {
+.contenedor-skills h4 {
+    color: #ff5080;
+    margin-top: 25px;
+    font-size: 22px;
+}
+.carousel-container-der, 
+.carousel-container-izq {
+    width: 60%;
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+    background-color: #d3d3d3;
+    border-radius: 30px;
+    padding: 20px;
+}
+.carousel{
     display: flex;
-    justify-content: space-between;
 }
-.contenedor-skills .skill .lista {
-    display: inline-block;
-    margin-right: 20px;
-    height: 10px;
-    width: 10px;
-    background-color: #fff;
+.carousel-container-der .carousel {
+    animation: carouselScrollDer 15s linear infinite;
 }
-.contenedor-skills .skill .barra {
-    background-color: #919191;
-    width: 100%;
-    height: 6px;
-    margin: 10px 0;
+.carousel-container-izq .carousel {
+    animation: carouselScrollIzq 15s linear infinite;
 }
-/* el siguiente estilo se aplicara luego mediante js para lograr la animación de la barra */
-.contenedor-skills .skill .barra .barra-progreso1 {
-    background-color: #fff;
-    width: 75%;
-    height: 6px;
-    animation: progreso1 4s forwards;
+@keyframes carouselScrollDer {
+    0% { transform: translateX(0);}
+    100% { transform: translateX(-100%);}
 }
-.contenedor-skills .skill .barra .barra-progreso2 {
-    background-color: #fff;
-    width: 85%;
-    height: 6px;
-    animation: progreso2 5s forwards;
+@keyframes carouselScrollIzq {
+    0% { transform: translateX(-100%);}
+    100% { transform: translateX(0);}
 }
-.contenedor-skills .skill .barra .barra-progreso3 {
-    background-color: #fff;
-    width: 70%;
-    height: 6px;
-    animation: progreso3 6s forwards;
+.carousel-skill {
+    flex: 0 0 auto;
+    width: 100px;
+    margin: 10px 30px;
+    border-radius: 5px;
+    overflow: hidden;
 }
-.contenedor-skills .skill .barra .barra-progreso4 {
-    background-color: #fff;
-    width: 65%;
-    height: 6px;
-    animation: progreso4 7s forwards;
-}
-.contenedor-skills .skill .barra .barra-progreso5 {
-    background-color: #fff;
-    width: 73%;
-    height: 6px;
-    animation: progreso5 8s forwards;
-}
-.contenedor-skills .skill .barra .barra-progreso6 {
-    background-color: #fff;
-    width: 82%;
-    height: 6px;
-    animation: progreso6 9s forwards;
-}
-.contenedor-skills .skill .barra .barra-progreso7 {
-    background-color: #fff;
-    width: 65%;
-    height: 6px;
-    animation: progreso7 10s forwards;
-}
-
-/* creamos las animaciones de las barras */
-
-@keyframes progreso1{
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 75%;
-    }
-}
-@keyframes progreso2{
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 85%;
-    }
-}
-@keyframes progreso3{
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 70%;
-    }
-}
-@keyframes progreso4{
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 65%;
-    }
-}
-@keyframes progreso5{
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 73%;
-    }
-}
-@keyframes progreso6{
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 82%;
-    }
-}
-@keyframes progreso7{
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 65%;
-    }
+.carousel-skill img {
+    width: 100px;
+    height: 100px;
 }
 
 /* SECCION PORTAFOLIO */

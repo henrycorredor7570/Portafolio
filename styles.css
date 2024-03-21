@@ -59,11 +59,15 @@ html {
     text-decoration: none;
     color: #fff;
     display: inline-block;
-    margin-left: 10px;
+    font-size: 30px;
+    margin-left: 5px;
     transition: .5s;
 }
 #inicio .contenido header .contenido-header .redes a:hover{
     color: #ff5080;
+}
+#inicio .contenido header .contenido-header .redes a i {
+    margin: 0px 10px;
 }
 #inicio .contenido header .contenido-header .seleccionado {
     color: #ff5080;
@@ -313,6 +317,9 @@ html {
     margin-top: 25px;
     font-size: 22px;
 }
+.carousel{
+    display: flex;
+}
 .carousel-container-der, 
 .carousel-container-izq {
     width: 60%;
@@ -322,9 +329,6 @@ html {
     background-color: #d3d3d3;
     border-radius: 30px;
     padding: 20px;
-}
-.carousel{
-    display: flex;
 }
 .carousel-container-der .carousel {
     animation: carouselScrollDer 35s linear infinite;
@@ -377,7 +381,6 @@ html {
 }
 #portfolio .fila .proyecto {
     max-width: 100%;
-    /* border: 2px solid #000; */
     border-radius: 5px;
     margin: 0 15px;
     position: relative;
@@ -600,6 +603,44 @@ footer a{
     .contenedor-skills {
         padding: 50px 20px;
     }
+    .contenedor-skills h4 {
+        font-size: 15px;
+    }
+    .carousel-container-der, 
+    .carousel-container-izq {
+    width: 80%;
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+    background-color: #d3d3d3;
+    border-radius: 30px;
+    padding: 10px;
+    }
+    .carousel-container-der .carousel {
+        animation: carouselScrollDer 35s linear infinite;
+    }
+    @keyframes carouselScrollDer {
+        0% { transform: translateX(0);}
+        100% { transform: translateX(-1100%);}
+    }
+    .carousel-container-izq .carousel {
+        animation: carouselScrollIzq 35s linear infinite;
+    }
+    @keyframes carouselScrollIzq {
+        0% { transform: translateX(-1100%);}
+        100% { transform: translateX(0);}
+    }
+    .carousel-skill {
+        flex: 0 0 auto;
+        width: 100px;
+        margin: 12px 5px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .carousel-skill img {
+        width: 55px;
+        height: 55px;
+    }
     #portfolio {
         padding: 50px 0;
     }
@@ -607,7 +648,28 @@ footer a{
         display: block;
     }
     #portfolio .fila .proyecto {
-        margin: 10px auto;
+        margin: 0px auto;
+    }
+    #portfolio .fila .proyecto .info h4 {
+        font-size: 14px;
+    }
+    #portfolio .fila .proyecto .info {
+        font-size: 12px;
+    }
+    #portfolio .fila .buttons_Links {
+        margin-bottom: 20px;
+    }
+    #portfolio .fila .buttons_Links a {
+        padding: 5px 10px;
+        margin: 7px 15px 15px;
+        font-size: 12px;
+    }
+    #portfolio .fila .buttons_skills span {
+        margin: 10px 7px 10px;
+        font-size: 12px
+    }
+    #portfolio .fila .buttons_Links a i {
+        font-size: 14px;
     }
     #contacto {
         padding: 50px 15px;

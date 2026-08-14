@@ -1,0 +1,27 @@
+<div>
+    <div class="buttons_skills">
+        <span>PostgreSQL</span>
+        <span>Nodejs</span>
+        <span>Redux</span>
+        <span>React</span>
+    </div>
+    <div class="proyecto">
+        <div class="overlay"></div>
+        <img src="assets/Captura de pantalla (311).png" alt="">
+        <div class="info">
+            <h4>Mundo Pokemon</h4>
+            <br/>
+            <p>SPA de Pokemones que incluye landing page, listado de pokemones con sus detalles, búsqueda por nombre, filtros, ordenamientos, paginación, creación de nuevos pokemones por formulario</p>
+        </div>
+    </div>
+    <div class="buttons_Links">
+        <a href="https://github.com/henrycorredor7570/Pokemon" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Sitio web
+        </a>
+        <a href="https://github.com/henrycorredor7570/Pokemon" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            Código fuente
+        </a>
+    </div>
+</div>

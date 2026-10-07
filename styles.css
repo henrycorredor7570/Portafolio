@@ -11,7 +11,6 @@ html {
     scroll-behavior: smooth;
 }
 #inicio{
-    /* background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("assets/clint-patterson-dYEuFB8KQJk-unsplash.jpg");  */
     background: linear-gradient(rgba(8, 10, 18, .8), rgba(8, 10, 18, .8)), url("assets/clint-patterson-dYEuFB8KQJk-unsplash.jpg");
     background-size: cover;
     background-position: center center;
@@ -30,15 +29,17 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 #inicio .contenido header .contenido-header h1 {
     text-align: center;
     color: #ff5080;
 }
 #inicio .contenido header .contenido-header .logo {
-    max-width: 55px;
-    height: auto;
+    width: 120px;          
+    max-width: 150px;      
+    height: auto;          
+    object-fit: contain;   
     cursor: pointer;
 }
 #inicio .contenido header .contenido-header nav ul {
@@ -128,100 +129,160 @@ html {
     display: none;
 }
 
-/* SECCION S O B R E  M I */
+/* ==========================================
+   SECCION S O B R E   M I 
+   ========================================== */
 
 #sobremi {
-    max-width: 100%;
-    margin: auto;
-    padding: 100px 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 90px 20px;
     color: #111135;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
 }
+
+/* Contenedor de la Imagen */
 #sobremi .contenedor-foto {
-    max-width: 500px;
-    /* margin-right: 80px; */
-    margin: 0 80px 0 130px;
-}
-#sobremi .contenedor-foto img {
-    width: auto; 
-    height: auto;
-    border-radius: 20px;
-    background-color: #f3f3f3;
-    padding: 20px;
-}
-#sobremi .sobremi {
-    margin: 0 130px 0 40px;
-    min-width: 300px;
-}
-#sobremi .sobremi .titulo-seccion {
-    font-size: 22px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #111135;
-    text-decoration: underline;
-    text-decoration-color: #d3d3d3;
-    text-decoration-thickness: 5px;
-}
-#sobremi .sobremi h2 {
-    font-size: 34px;
-    font-weight: bold;
-    margin: 20px 0;
-    letter-spacing: 2px;
-}
-#sobremi .sobremi h2 span {
-    color: #ff5080;
-}
-#sobremi .sobremi h3 {
-    font-size: 18px;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-#sobremi .sobremi p {
-    font-size: 15px;
-    line-height: 25px;
-    color: #565656;
-    margin-bottom: 12px;
-}
-#sobremi .sobremi .datos_contacto {
-    text-align: center;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 30px 0; 
-}
-#sobremi .sobremi .datos_contacto .whatsapp img {
-    width: 4vw;
-    height: auto;
-    padding: 10px; 
-}
-#sobremi .sobremi .datos_contacto .linkedIn img {
-    width: 4vw;
-    height: auto; 
-    padding: 10px; 
-}
-#sobremi .sobremi .datos_contacto .gmail img {
-    width: 4vw;
-    height: auto;
-    padding: 10px; 
-}
-#sobremi .sobremi .cv {
+    flex: 1;
+    max-width: 420px;
     display: flex;
     justify-content: center;
 }
-#sobremi .sobremi .download_cv {
-    display: inline-block;  
-    text-decoration: none;
-    color: #000;
-    border-radius: 30px;
-    padding: 10px 20px;
-    border: 1px solid #000;
-    margin-top: 30px;
-    transition: .5s;
+
+#sobremi .contenedor-foto img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f5);
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 35px -10px rgba(17, 17, 53, 0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-#sobremi .sobremi .download_cv:hover {
+
+#sobremi .contenedor-foto img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 40px -10px rgba(255, 80, 128, 0.2);
+}
+
+/* Contenido de Texto */
+#sobremi .sobremi {
+    flex: 1.2;
+    max-width: 650px;
+}
+
+#sobremi .sobremi .titulo-seccion {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ff5080;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    display: inline-block;
+    border-bottom: 3px solid #ff5080;
+    padding-bottom: 2px;
+}
+
+#sobremi .sobremi h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 10px 0 5px 0;
+    letter-spacing: -0.5px;
+    color: #111135;
+}
+
+#sobremi .sobremi h2 span {
+    color: #ff5080;
+}
+
+#sobremi .sobremi h3 {
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    letter-spacing: 1.5px;
+    color: #565670;
+}
+
+#sobremi .sobremi p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: #3d3d5c;
+    margin-bottom: 14px;
+}
+
+#sobremi .sobremi p strong {
+    color: #111135;
+    font-weight: 600;
+}
+
+/* Fila de Acciones: Botón CV y Redes */
+#sobremi .acciones_sobremi {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+/* Botón de CV elegante */
+#sobremi .download_cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
     background-color: #ff5080;
-    color: #fff;
+    border-radius: 30px;
+    padding: 12px 26px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid #ff5080;
+    box-shadow: 0 8px 18px rgba(255, 80, 128, 0.28);
+    transition: all 0.3s ease;
+}
+
+#sobremi .download_cv:hover {
+    background-color: transparent;
+    color: #ff5080;
+    box-shadow: 0 4px 12px rgba(255, 80, 128, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Iconos Sociales pulidos */
+#sobremi .datos_contacto {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#sobremi .datos_contacto .red-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #f4f4f8;
+    border: 1px solid #e0e0eb;
+    transition: all 0.3s ease;
+}
+
+#sobremi .datos_contacto .red-social img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+#sobremi .datos_contacto .red-social:hover {
+    background-color: #ffffff;
+    border-color: #ff5080;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(17, 17, 53, 0.1);
 }
 
 /* SECCION SERVICIOS */

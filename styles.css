@@ -11,7 +11,8 @@ html {
     scroll-behavior: smooth;
 }
 #inicio{
-    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("assets/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg"); 
+    /* background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("assets/clint-patterson-dYEuFB8KQJk-unsplash.jpg");  */
+    background: linear-gradient(rgba(8, 10, 18, .8), rgba(8, 10, 18, .8)), url("assets/clint-patterson-dYEuFB8KQJk-unsplash.jpg");
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -94,7 +95,7 @@ html {
     text-align: center;
 }
 #inicio .contenido .presentacion h2 span {
-    font-size: 25px;
+    font-size: 30px;
     color: #ff5080;
 }
 #inicio .contenido .presentacion .legend {

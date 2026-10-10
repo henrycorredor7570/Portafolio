@@ -790,17 +790,62 @@ html {
 
 /* SECCION FOOTER */
 footer {
-    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    padding: 62px 24px 0;
     color: #fff;
-    text-align: center;
-    padding: 30px 0;
+    background: radial-gradient(ellipse at 8% 0%, rgba(255, 80, 128, .12), transparent 34%), #111135;
 }
-footer a{
-    text-decoration: none;
-    color: #fff;
-    display: inline-block;
-    margin: 5px;
-    font-size: 26px;
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff5080, #ff9ab5 45%, rgba(255, 80, 128, 0));
+}
+footer .footer-inner { position: relative; max-width: 1120px; margin: 0 auto; }
+footer .footer-top { display: grid; grid-template-columns: 1.25fr .7fr 1.05fr; gap: 64px; padding-bottom: 48px; }
+footer .footer-brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+footer .footer-brand-mark { display: grid; place-items: center; width: 45px; height: 45px; color: #fff; background: linear-gradient(135deg, #ff5080, #d83b68); border-radius: 13px; font-size: 15px; font-weight: 700; letter-spacing: -1px; box-shadow: 0 8px 20px rgba(255, 80, 128, .2); }
+footer .footer-brand-name { display: grid; gap: 4px; font-size: 15px; font-weight: 600; letter-spacing: .1px; }
+footer .footer-brand-name small { color: #a9a9bd; font-size: 10px; font-weight: 400; letter-spacing: .5px; }
+footer .footer-brand-block > p, footer .footer-connect > p { max-width: 290px; margin-top: 18px; color: #aaaabd; font-size: 12px; line-height: 1.8; }
+footer .footer-navigation h3, footer .footer-connect h3 { margin: 5px 0 17px; color: #fff; font-size: 12px; font-weight: 600; letter-spacing: .5px; }
+footer .footer-navigation nav { display: grid; gap: 11px; }
+footer .footer-navigation nav a { width: fit-content; color: #aaaabd; text-decoration: none; font-size: 12px; transition: color .2s, transform .2s; }
+footer .footer-navigation nav a:hover { color: #ff8eac; transform: translateX(3px); }
+footer .footer-connect > p { margin: -4px 0 13px; }
+footer .footer-email { display: inline-flex; align-items: center; gap: 8px; color: #ff8eac; text-decoration: none; font-size: 11px; transition: color .2s; }
+footer .footer-email:hover { color: #fff; }
+footer .footer-email i { font-size: 9px; }
+footer .footer-sociales { display: flex; gap: 9px; margin-top: 19px; }
+footer .footer-sociales a { display: grid; place-items: center; width: 34px; height: 34px; color: #c5c5d2; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12); border-radius: 50%; text-decoration: none; font-size: 15px; transition: .2s; }
+footer .footer-sociales a:hover { color: #fff; background: #ff5080; border-color: #ff5080; transform: translateY(-2px); }
+footer .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 62px; border-top: 1px solid rgba(255,255,255,.12); color: #89899f; font-size: 10px; }
+footer .footer-bottom p { margin: 0; }
+footer .footer-bottom p i { color: #ff668e; font-size: 9px; }
+footer .footer-top-link { display: inline-flex; align-items: center; gap: 8px; color: #c5c5d2; text-decoration: none; transition: color .2s; }
+footer .footer-top-link:hover { color: #ff8eac; }
+footer .footer-top-link i { color: #ff668e; font-size: 10px; }
+
+@media screen and (max-width: 800px) {
+    footer { padding: 48px 24px 0; }
+    footer .footer-top { grid-template-columns: 1fr 1fr; gap: 36px 28px; padding-bottom: 35px; }
+    footer .footer-brand-block { grid-column: 1 / -1; }
+    footer .footer-brand-block > p { margin-top: 13px; }
+    footer .footer-bottom { flex-wrap: wrap; justify-content: space-between; padding: 16px 0; }
+    footer .footer-bottom p:nth-child(2) { display: none; }
+}
+
+@media screen and (max-width: 480px) {
+    footer { padding: 42px 20px 0; }
+    footer .footer-top { grid-template-columns: 1fr; gap: 27px; }
+    footer .footer-brand-block { grid-column: auto; }
+    footer .footer-navigation h3, footer .footer-connect h3 { margin-bottom: 12px; }
+    footer .footer-bottom { font-size: 9px; }
+    footer .footer-bottom p { max-width: 205px; line-height: 1.6; }
 }
 
 /* SECCION RESPONSIVE */

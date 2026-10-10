@@ -36,3 +36,5 @@ function envioFormulario(event){
     var enlace = 'mailto:henry.corredor7570@gmail.com?subject=' + encodeURIComponent(tema) + '&body=' + encodeURIComponent(cuerpo);
     window.location.href = enlace;
 }
+
+document.getElementById('current-year').textContent = new Date().getFullYear();

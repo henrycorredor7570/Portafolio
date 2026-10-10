@@ -22,21 +22,17 @@ function responsiveMenu() {
     }
 }
 
-// para la alerta del envio del mensaje
-function envioFormulario(){
-    document.getElementById('formulario').addEventListener('submit', function(event) {
-        event.preventDefault(); 
+// Abre el cliente de correo con el mensaje listo para enviar.
+function envioFormulario(event){
+    event.preventDefault();
+    var formulario = event.currentTarget;
+    if (!formulario.reportValidity()) return;
 
-        var nombre = document.querySelector('#contacto input[placeholder="Nombre Completo"]').value;
-        var email = document.querySelector('#contacto input[placeholder="Dirección de Email"]').value;
-        var tema = document.querySelector('#contacto input[placeholder="Tema..."]').value;
-        var mensaje = document.querySelector('#contacto textarea').value;
-
-        if (nombre && email && tema && mensaje) {
-            alert('Mensaje enviado exitosamente');
-            this.reset();
-        } else {
-            console.log('Por favor, completa todos los campos antes de enviar el mensaje');
-        }
-    });
+    var nombre = formulario.elements.nombre.value.trim();
+    var email = formulario.elements.email.value.trim();
+    var tema = formulario.elements.tema.value.trim();
+    var mensaje = formulario.elements.mensaje.value.trim();
+    var cuerpo = 'Hola Henry,\\n\\n' + mensaje + '\\n\\nMi nombre es ' + nombre + ' (' + email + ').';
+    var enlace = 'mailto:henry.corredor7570@gmail.com?subject=' + encodeURIComponent(tema) + '&body=' + encodeURIComponent(cuerpo);
+    window.location.href = enlace;
 }

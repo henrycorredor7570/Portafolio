@@ -10,6 +10,10 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* ==========================================
+   BARRA DE INICIO 
+   ========================================== */
 #inicio{
     background: linear-gradient(rgba(8, 10, 18, .8), rgba(8, 10, 18, .8)), url("assets/clint-patterson-dYEuFB8KQJk-unsplash.jpg");
     background-size: cover;
@@ -285,137 +289,321 @@ html {
     box-shadow: 0 6px 15px rgba(17, 17, 53, 0.1);
 }
 
-/* SECCION SERVICIOS */
+/* ==========================================
+   SECCION SERVICIOS (DINÁMICA & PARALLAX)
+   ========================================== */
+
 #servicios {
-    padding: 100px 15px;
-    text-align: center;
-    background: linear-gradient(#eb5a5acc, rgba(33,16,16,.8)), url("assets/MERN.jpg");
+    padding: 110px 20px;
+    /* Fondo Parallax Elegante con Overlay de color del Portafolio */
+    background: linear-gradient(
+        rgba(17, 17, 53, 0.88), 
+        rgba(17, 17, 53, 0.92)
+    ), 
+    url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920&auto=format&fit=crop'); /* Puedes usar tu foto assets/MERN.jpg si lo prefieres */
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     background-position: center center;
-}
-#servicios .titulo-seccion {
-    font-size: 22px;
-    text-transform: uppercase;
-    color: #fff;
-    text-decoration: underline;
-    text-decoration-color: #a5a4a4;
-    text-decoration-thickness: 5px;
-}
-#servicios .fila {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 30px auto;
-}
-#servicios .fila .servicio {
-    max-width: 350px;
-    background-color: #fff;
-    padding: 30px;
-    margin: 0 10px;
-    border-radius: 8px;
-    transition: .5s;
-}
-#servicios .fila .servicio:hover {
-    box-shadow: 5px 5px 10px #565656, -5px -5px 10px #8a8a8a;
-}
-#servicios .fila .servicio h4 {
-    font-size: 22px;
-    margin-bottom: 25px;
-    color: #ff5080;
-}
-#servicios .fila .servicio .icono {
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #d3d3d3;
-    padding: 20px;
-    margin-bottom: 25px;
-}
-#servicios .fila .servicio hr {
-    width: 40%;
-    margin: auto;
-    color: #000;
-    margin-bottom: 25px;
-}
-#servicios .fila .servicio ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 -10px 10px -10px;
-}
-#servicios .fila .servicio ul li {
-    background-color: #514b4b;
-    border: solid 1px #000000;
-    color: white;
-    font-weight: 600;
-    padding: 10px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 2px 2px 2px #706e6e;
-}
-#servicios .fila .servicio p {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
 }
 
-/* SECCION HABILIDADES */
-.contenedor-skills {
-    padding: 100px 15px;
-    text-align: center;
+#servicios .contenedor-servicios {
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.contenedor-skills h3 {
-    font-size: 22px;
+
+#servicios .titulo-seccion {
+    font-size: 15px;
     text-transform: uppercase;
-    text-decoration: underline;
-    text-decoration-color: #a5a4a4;
-    text-decoration-thickness: 5px;
-}
-.contenedor-skills h4 {
+    font-weight: 700;
     color: #ff5080;
-    margin-top: 25px;
-    font-size: 22px;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
 }
-.carousel{
+
+#servicios h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+#servicios h2 span {
+    color: #ff5080;
+}
+
+/* Rejilla adaptativa */
+#servicios .grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* TARJETAS GLASSMORPHISM CON EFECTO INTERACTIVO */
+#servicios .servicio-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05); /* Efecto vidrio transparente */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px); /* Desenfoque de cristal tras de la tarjeta */
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px 25px 30px 25px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
 }
-.carousel-container-der, 
-.carousel-container-izq {
-    width: 60%;
-    margin: 40px auto;
+
+/* Borde superior resplandeciente sutil */
+#servicios .servicio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff5080, transparent);
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+}
+
+/* EFECTO HOVER IMPACTANTE */
+#servicios .servicio-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 80, 128, 0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
+                0 0 25px rgba(255, 80, 128, 0.25);
+}
+
+#servicios .servicio-card:hover::before {
+    opacity: 1;
+}
+
+/* Badge dinamico de Estado */
+#servicios .servicio-card .badge-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #a0a0c0;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.5px;
+}
+
+#servicios .servicio-card .badge-status span {
+    color: #ff5080;
+    font-size: 10px;
+    margin-right: 3px;
+}
+
+/* Íconos Neón */
+#servicios .servicio-card .icono {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 80, 128, 0.15);
+    border: 1px solid rgba(255, 80, 128, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 22px;
+    transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+}
+
+#servicios .servicio-card .icono i {
+    font-size: 28px;
+    color: #ff5080;
+    transition: color 0.4s ease;
+}
+
+/* Rotación y resplandor del ícono al pasar el mouse */
+#servicios .servicio-card:hover .icono {
+    transform: scale(1.1) rotate(5deg);
+    background: #ff5080;
+    box-shadow: 0 0 20px rgba(255, 80, 128, 0.6);
+}
+
+#servicios .servicio-card:hover .icono i {
+    color: #ffffff;
+}
+
+/* Títulos y párrafos */
+#servicios .servicio-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+#servicios .servicio-card p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #d1d1e0;
+    margin-top: auto;
+}
+
+/* Etiquetas / Chips Tecnológicos */
+#servicios .servicios-tag {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+#servicios .servicios-tag li {
+    background-color: rgba(255, 80, 128, 0.15);
+    border: 1px solid rgba(255, 80, 128, 0.35);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+#servicios .servicio-card:hover .servicios-tag li {
+    background-color: rgba(255, 80, 128, 0.3);
+    border-color: #ff5080;
+}
+
+/* ==========================================
+   SECCION HABILIDADES / SKILLS MARQUEE
+   ========================================== */
+
+.contenedor-skills {
+    padding: 90px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.contenedor-skills .titulo-seccion {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ff5080;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.contenedor-skills h2 {
+    font-size: 34px;
+    font-weight: 800;
+    color: #111135;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.contenedor-skills h2 span {
+    color: #ff5080;
+}
+
+.contenedor-skills .subtitulo-skills {
+    color: #666680;
+    font-size: 16px;
+    margin-bottom: 45px;
+}
+
+/* Contenedor principal del carrusel con máscara de difuminado en extremos */
+.carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
     overflow: hidden;
     position: relative;
-    background-color: #d3d3d3;
-    border-radius: 30px;
-    padding: 20px;
+    padding: 10px 0;
+    /* Efecto de desvanecimiento elegante a los lados */
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
-.carousel-container-der .carousel {
-    animation: carouselScrollDer 35s linear infinite;
+
+/* Pista que contiene las tarjetas */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
 }
-.carousel-container-izq .carousel {
-    animation: carouselScrollIzq 35s linear infinite;
+
+.track-left {
+    animation: scrollLeft 30s linear infinite;
 }
-@keyframes carouselScrollDer {
-    0% { transform: translateX(0);}
-    100% { transform: translateX(-300%);}
+
+.track-right {
+    animation: scrollRight 30s linear infinite;
 }
-@keyframes carouselScrollIzq {
-    0% { transform: translateX(-300%);}
-    100% { transform: translateX(0);}
+
+/* Pausar animación cuando el usuario pone el cursor encima */
+.carousel-container:hover .carousel-track {
+    animation-play-state: paused;
 }
+
+/* Animaciones calculadas con precisión */
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Estilo de la Tarjeta de Cada Skill */
 .carousel-skill {
-    flex: 0 0 auto;
-    width: 100px;
-    margin: 10px 30px;
-    border-radius: 5px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 110px;
+    padding: 16px 12px;
+    background: #f8f9fc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
 }
+
 .carousel-skill img {
-    width: 100px;
-    height: 100px;
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.carousel-skill span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #111135;
+    letter-spacing: 0.3px;
+}
+
+/* Efecto Hover en las tarjetas */
+.carousel-skill:hover {
+    background: #ffffff;
+    border-color: #ff5080;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 80, 128, 0.15);
+}
+
+.carousel-skill:hover img {
+    transform: scale(1.15);
 }
 
 /* SECCION PORTAFOLIO */
@@ -520,55 +708,85 @@ html {
 
 /* SECCION CONTACTO */
 #contacto {
-    padding: 100px 15px;
+    position: relative;
+    overflow: hidden;
+    padding: 112px 24px;
+    background: radial-gradient(ellipse at 12% 15%, rgba(255, 80, 128, .12), transparent 38%), #10111b;
+    color: #fff;
 }
-#contacto .titulo-seccion {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 22px;
-    text-transform: uppercase;
-    color: #111135;
-    text-decoration: underline;
-    text-decoration-color: #d3d3d3;
-    text-decoration-thickness: 5px;
+#contacto::before {
+    content: "";
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    right: -150px;
+    bottom: -190px;
+    border: 1px solid rgba(255, 80, 128, .2);
+    border-radius: 50%;
+    box-shadow: 0 0 0 35px rgba(255, 80, 128, .025), 0 0 0 70px rgba(255, 80, 128, .02);
 }
-#contacto .contenedor-form {
-    max-width: 1100px;
+#contacto .contacto-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1120px;
     margin: auto;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 76px;
+    align-items: center;
 }
+#contacto .contacto-eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #ff8eac; font-size: 11px; font-weight: 600; letter-spacing: 2px; }
+#contacto .contacto-eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: #ff5080; box-shadow: 0 0 12px #ff5080; }
+#contacto .titulo-seccion { margin: 22px 0 18px; color: #fff; font-size: clamp(34px, 4vw, 49px); line-height: 1.16; letter-spacing: -1.8px; }
+#contacto .titulo-seccion span { color: #ff7598; }
+#contacto .contacto-intro > p { max-width: 440px; color: #a9a9b7; font-size: 15px; line-height: 1.85; }
+#contacto .contacto-directo { display: grid; gap: 12px; margin-top: 34px; }
+#contacto .contacto-link { display: flex; align-items: center; gap: 14px; color: #fff; text-decoration: none; transition: transform .25s ease; }
+#contacto .contacto-link:hover { transform: translateX(4px); }
+#contacto .contacto-icono { display: grid; place-items: center; width: 46px; height: 46px; flex: 0 0 46px; color: #ff7598; background: rgba(255, 80, 128, .1); border: 1px solid rgba(255, 80, 128, .18); border-radius: 13px; font-size: 18px; }
+#contacto .contacto-link > span:nth-child(2) { display: grid; gap: 4px; }
+#contacto .contacto-link small { color: #8f90a0; font-size: 9px; letter-spacing: 1.4px; }
+#contacto .contacto-link strong { font-size: 13px; font-weight: 500; }
+#contacto .contacto-flecha { margin-left: auto; color: #737482; font-size: 12px; }
+#contacto .contacto-sociales { display: flex; align-items: center; gap: 11px; margin-top: 30px; color: #8f90a0; font-size: 11px; }
+#contacto .contacto-sociales > span { margin-right: 5px; }
+#contacto .contacto-sociales a { display: grid; place-items: center; width: 32px; height: 32px; color: #c7c7d0; border: 1px solid #32333e; border-radius: 50%; text-decoration: none; transition: .2s; }
+#contacto .contacto-sociales a:hover { color: #fff; border-color: #ff5080; background: #ff5080; }
+#contacto .contenedor-form { padding: 34px; background: #fff; color: #1d1e2a; border: 1px solid rgba(255,255,255,.6); border-radius: 20px; box-shadow: 0 24px 70px rgba(0,0,0,.25); }
+#contacto .form-header { display: flex; align-items: center; gap: 14px; margin-bottom: 27px; }
+#contacto .form-indicador { display: grid; place-items: center; width: 44px; height: 44px; color: #ff5080; background: #fff0f4; border-radius: 13px; font-size: 17px; }
+#contacto .form-header h4 { margin-bottom: 4px; color: #171824; font-size: 17px; }
+#contacto .form-header p { color: #7a7b88; font-size: 11px; }
 #contacto .contenedor-form .fila {
-    margin-bottom: 15px;
+    margin-bottom: 17px;
 }
 #contacto .contenedor-form .mitad {
     display: flex;
-    justify-content: space-between;
+    gap: 14px;
 }
-#contacto .contenedor-form input,
-#contacto .contenedor-form textarea {
-    padding: 20px;
-    border-radius: 20px;
-    border: none;
-    border: 1px solid #919191;
+#contacto .contenedor-form label { display: block; width: 100%; color: #4d4e5b; font-size: 11px; font-weight: 600; }
+#contacto .contenedor-form input, #contacto .contenedor-form textarea {
+    display: block; width: 100%; margin-top: 8px; padding: 12px 14px; color: #20212c; background: #fafafd;
+    border: 1px solid #e7e7ee; border-radius: 9px; outline: none; font: inherit; font-size: 12px; transition: border .2s, box-shadow .2s;
 }
+#contacto .contenedor-form input { height: 45px; }
+#contacto .contenedor-form textarea { min-height: 104px; resize: vertical; }
+#contacto .contenedor-form input:focus, #contacto .contenedor-form textarea:focus { border-color: #ff7598; box-shadow: 0 0 0 3px rgba(255,80,128,.1); background: #fff; }
+#contacto .contenedor-form input::placeholder, #contacto .contenedor-form textarea::placeholder { color: #aaabb6; font-weight: 400; }
 #contacto .contenedor-form .mitad input {
-    width: 48%;
+    width: 100%;
 }
 #contacto .contenedor-form .input-full {
     width: 100%;
 }
 #contacto .btn-enviar {
-    display: block;
-    margin: auto;
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    margin-top: 1px; padding: 13px 20px; color: #fff; background: #ff5080; border: 0; border-radius: 9px;
     cursor: pointer;
-    transition: .5s;
-    padding: 10px 15px;
-    font-size: 18px;
-    font-weight: bold;
+    transition: .25s; font-size: 12px; font-weight: 600;
 }
-#contacto .btn-enviar:hover {
-    background-color: #ff5080;
-    color: #fff;
-}
+#contacto .btn-enviar:hover { background: #e63c6d; transform: translateY(-2px); box-shadow: 0 7px 18px rgba(255,80,128,.25); }
+#contacto .form-nota { display: flex; align-items: center; gap: 7px; margin-top: 17px; color: #9596a1; font-size: 10px; }
 
 /* SECCION FOOTER */
 footer {
@@ -734,8 +952,10 @@ footer a{
         font-size: 14px;
     }
     #contacto {
-        padding: 50px 15px;
+        padding: 70px 20px;
     }
+    #contacto .contacto-inner { grid-template-columns: 1fr; gap: 38px; max-width: 620px; }
+    #contacto .contenedor-form { padding: 26px; }
     #contacto .contenedor-form .mitad {
         margin-bottom: 15px;
         display: block;
@@ -744,4 +964,5 @@ footer a{
         width: 100%;
         margin-bottom: 15px;
     }
+    #contacto .contenedor-form .mitad { display: grid; gap: 0; }
 }
